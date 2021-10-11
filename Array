@@ -1,0 +1,42 @@
+import array as arr
+a = arr.array('i',[2, 4, 6, 8, 7])
+
+print("First integer:", a[0])
+print("Second integer:", a[1])
+print("Third integer:", a[-2])
+
+
+
+a = arr.array('i',[2, 4, 6, 8, 7])
+
+print("Third integer:", a[-2])
+print("Second integer:", a[1])
+print("First integer:", a[0])
+
+arr = [2, 2, 4, 6, 8 ,7]
+
+def int():
+    print("Duplicate integer within array is:")
+    for i in range(0, len(arr)):
+        for j in range(i+1, len(arr)):
+            if(arr[i] == arr[j]):
+                print([i])
+
+
+
+
+
+del arr[2]
+print(arr)
+
+
+e = input("Would you like to find the memory of you address? ")
+if e == "Yes":
+    memadd = {"a": 1}
+    memarray = id(arr)
+    print(arr)
+
+f = input("Convert to hex? ")
+if f == "Yes":
+    hexadecimal = hex(arr)
+    print(hexadecimal)
