@@ -1,0 +1,39 @@
+import time
+
+x = 0
+
+even = 'even' if x % 2 == 0 else 'false'
+
+print(even)
+
+mark = 50
+
+if (mark>=90):
+ print("A")
+
+if(mark>=80):
+    print("B")
+
+else:
+      print("C")
+
+
+def sum_of_n_2(n):
+  the_sum = 0
+
+  for i in range(1, n + 1):
+    the_sum = the_sum + 1
+    print(the_sum)
+
+(sum_of_n_2 (1000000))
+
+
+def sum_of_n(n):
+  start = time.time()
+  the_sum (n * (n+1) /2)
+  print(the_sum)
+  end = time.time
+  
+  return the_sum, end end - start
+
+print("the sum is %d and took %10.7f seconds." % sum_of_n(100000))
