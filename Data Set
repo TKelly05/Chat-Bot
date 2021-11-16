@@ -1,0 +1,15 @@
+import random
+
+def createFile():
+  with open('textFile.txt' , 'w') as file:
+
+    for line in range(1000000):
+       for line in range(7):
+         random_number = str(random.randint(1,100))
+         file.write(random_number + '\t')
+        
+        
+       file.write(str('\n'))  
+
+
+createFile()
