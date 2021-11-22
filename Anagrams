@@ -1,0 +1,11 @@
+def check(apple, pear):
+     
+    
+    if(sorted(apple)== sorted(pear)):
+       print("The strings are anagrams.")
+    else:
+        print("The strings aren't anagrams.")     
+
+apple ="listen"
+pear ="silent"
+check(apple, pear)
