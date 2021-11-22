@@ -1,0 +1,35 @@
+#squares = []
+#squares = [i for i in range(1000)]
+#print(squares)
+
+#squares = []
+#squares = [i for i in range (1000)]
+#result = list(filter(lambda x: (x % 8 == 0), squares))
+#print("Numbers divisible by 8 are",result)
+
+#squares = list(range(1, 1001)) 
+##sqrs = str(input("Enter a number: "))
+#output = [i for i in squares if sqrs in str(i)]
+#print (output)
+
+#string = "Practice Problems to Drill List Comprehension in Your Head."
+#spaces = [s for s in string if s == ' ']
+#print(len(spaces))
+
+#string = "Practice Problems to Drill List Comprehension in Your Head."
+#examine = string.split()
+#result = [word for word in examine if len(word) <=4]
+#print(result)
+
+#string = "Practice Problems to Drill List Comprehension in Your Head."
+
+#vowels = ['a', 'e', 'i', 'o', 'u']
+#new_string =  ''.join([vowels for vowels in string if vowels not in ['a', 'e', 'i', 'o', 'u']]);
+
+#print(new_string)
+
+#squares = []
+#squares = [i for i in range (1000)]
+#[num for num in squares if True in [True for divisor in range(2,9) if num % divisor == 0]]
+
+#print(squares)
