@@ -1,0 +1,69 @@
+def menu():
+
+
+ print("Welcome to Warehouse Stock System")
+
+def verify_id(Id):
+    if id == 7:
+     return True
+    else:
+     return False
+
+id=(int(input("Please Enter Your Item Id:")))
+if verify_id(id):
+     print("Id identified - Loading Product")
+else:
+     while not(id==5375832):
+        print("Invalid Id - Please enter a valid Id")
+        id=(int(input("Please Enter Your Item Id:"))) 
+         
+if verify_id(id):
+  print("""
+
+1) Location
+2) Stock Level
+3) Department
+4) VAT Calculation
+5) Exit
+
+""")
+
+if verify_id(id):
+    option=int(input("Select Option Using The Numbers Alligned:"))
+
+if option ==1:
+    print("Construction Level 2C")
+
+if option ==2:
+    print("54368 Units")
+
+if option ==4:
+    def get_price():
+        price = float(raw_input("How much did you pay?"))
+        return price
+
+        def VAT(price):
+            VAT = round (.2 * price,2)
+            return VAT
+
+        def final_price(price,VAT):
+            final_price = price - VAT
+            return final_price
+
+        def display(price, VAT):
+             print ("You paid £,"%.2f % price)
+             # print "The VAT you payed came to £","%.2f" % final_price
+             # print "Your final payment after VAT is £","%.2f" % final_price
+
+         price = get_price()
+         VAT = VAT(price)
+         final_price = final_price(price,VAT)
+         display(price,VAT)                      
+
+if option ==3:
+    print("Hand Tools")
+
+
+if option ==5:
+    print("Thank you for using our services, goodbye.")
+    exit()                       
