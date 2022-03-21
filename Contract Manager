@@ -1,0 +1,91 @@
+  print("3) All Contracts (Filter: Month)")
+  print("4) Find and display Contract")
+  print("5) Exit")
+  print("")
+  t = int(input("Enter Your Selection: "))
+
+  if t == 1:
+    print("New Contract Creation")
+    print("")
+    date = input("Enter Date: ")
+    package = input("Enter Package: ")
+    data = input("Enter Data Bundle: ")
+    period = input("Enter Period: ")
+    international = input("Enter International allowed?: ")
+    monthly = input("Enter Monthly Charge: ")
+    client = input("Enter Client Name: ")
+    newContract(date,package,data,period,international,uuid.uuid1(),monthly,client)
+  
+  if t == 2:
+    displayAllContracts()
+  
+  if t== 3:
+    month = input("Enter Month to Filter by (E.g Nov): ")
+    displayMonthContracts(month)
+
+  if t == 4:
+    month = input("Enter Text to Filter by: ")
+    findContract(filter)
+  
+  if t == 5:
+    quit()
+
+def newContract(date,package,data,period,international,reference,monthly_charge,name):
+  file1 = open("contracts.csv", "a")
+  contract = ("" + str(date) + "," + str(package) + "," + str(data) + "," + str(period) + "," + str(international) + "," + str(reference) + "," + str(monthly_charge) + "," + str(name) + "\n")
+  file1.write(contract)
+  file1.close()
+  print("wrote")
+
+
+def displayAllContracts():
+  count = 0
+  file1 = open("contracts.csv", "r")
+  Lines = file1.readlines()
+  table = BeautifulTable()
+  for line in Lines:
+    if count >= 1:
+      x = line.rstrip().split(",")
+      table.rows.append([x[0], x[1], x[2], x[3], x[4], x[5], x[6], x[7]])
+      count += 1
+    else:
+      count += 1
+  table.columns.header = ["Contract Date", "Package", "Data Bundle", "Period (Months)", "International", "Reference", "Monthly Charge", "Client Name"]
+  print(table)
+
+def displayMonthContracts(month):
+  count = 0
+  file1 = open("contracts.csv", "r")
+  Lines = file1.readlines()
+  table = BeautifulTable()
+  for line in Lines:
+    if count >= 1:
+      x = line.rstrip().split(",")
+      if x[0].find(month) != -1:
+        table.rows.append([x[0], x[1], x[2], x[3], x[4], x[5], x[6], x[7]])
+        count += 1
+    else:
+      count += 1
+  table.columns.header = ["Contract Date", "Package", "Data Bundle", "Period (Months)", "International", "Reference", "Monthly Charge", "Client Name"]
+  print(table)
+
+def findContract(filters):
+  count = 0
+  file1 = open("contracts.csv", "r")
+  Lines = file1.readlines()
+  table = BeautifulTable()
+  for line in Lines:
+    if count >= 1:
+      if line.find(filters) != -1:
+        x = line.rstrip().split(",")
+        table.rows.append([x[0], x[1], x[2], x[3], x[4], x[5], x[6], x[7]])
+        count += 1
+      else:
+        print("Nothing Could Match Your Search Case.")
+    else:
+      count += 1
+  table.columns.header = ["Contract Date", "Package", "Data Bundle", "Period (Months)", "International", "Reference", "Monthly Charge", "Client Name"]
+  print(table)
+
+while True:
+  menu()
